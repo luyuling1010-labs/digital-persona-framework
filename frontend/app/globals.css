@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "New York", "Iowan Old Style", "Times New Roman";
+  --font-body: "SF Pro Display", "Aptos", "Segoe UI";
+  --background: #050609;
+  --foreground: #f6f4ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--foreground);
+  background:
+    linear-gradient(115deg, rgba(166, 183, 217, 0.16), transparent 34%),
+    linear-gradient(250deg, rgba(244, 219, 174, 0.12), transparent 42%),
+    linear-gradient(135deg, #050609 0%, #0a0d12 46%, #06070a 100%);
+  font-family: var(--font-body), sans-serif;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(225, 237, 255, 0.22);
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(26px);
+}
+
+.stage-ambient {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 22%, transparent 78%, rgba(244, 219, 174, 0.08)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 28%, rgba(0, 0, 0, 0.28));
+}
+
+.stage-shell {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045) 32%, rgba(255, 255, 255, 0.075) 62%, rgba(0, 0, 0, 0.26)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.18));
+  box-shadow: 0 28px 110px rgba(0, 0, 0, 0.54);
+  backdrop-filter: blur(28px);
+}
+
+.stage-center {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 46%, rgba(0, 0, 0, 0.18));
+}
+
+.stage-center::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.05)),
+    linear-gradient(180deg, transparent 68%, rgba(255, 255, 255, 0.08));
+}
+
+.subtitle-focus {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.2rem, 3vw, 2.5rem) 0;
+  text-shadow: 0 18px 70px rgba(255, 255, 255, 0.18);
+}
+
+.stage-console {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.32)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045), transparent);
+}
+
+.subtle-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 76%);
+}
